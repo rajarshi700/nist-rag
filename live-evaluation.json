@@ -1,0 +1,150 @@
+{
+  "retrieval": [
+    {
+      "question": "What are the four core functions of the NIST AI RMF?",
+      "passed": true,
+      "first_relevant_rank": 1,
+      "retrieved_pages": [
+        "rmf:25",
+        "rmf:25",
+        "rmf:26",
+        "rmf:26",
+        "rmf:44",
+        "rmf:30"
+      ]
+    },
+    {
+      "question": "Which NIST AI RMF function is cross-cutting?",
+      "passed": true,
+      "first_relevant_rank": 1,
+      "retrieved_pages": [
+        "rmf:25",
+        "rmf:39",
+        "rmf:26",
+        "genai:5",
+        "rmf:30",
+        "genai:5"
+      ]
+    },
+    {
+      "question": "What are the characteristics of trustworthy AI?",
+      "passed": true,
+      "first_relevant_rank": 1,
+      "retrieved_pages": [
+        "rmf:17",
+        "rmf:17",
+        "genai:12",
+        "rmf:7",
+        "genai:13",
+        "genai:16"
+      ]
+    },
+    {
+      "question": "What does the Generative AI Profile mean by confabulation?",
+      "passed": true,
+      "first_relevant_rank": 1,
+      "retrieved_pages": [
+        "genai:10",
+        "genai:34",
+        "genai:13",
+        "genai:42",
+        "genai:5",
+        "genai:35"
+      ]
+    },
+    {
+      "question": "What data privacy risks does the Generative AI Profile identify?",
+      "passed": true,
+      "first_relevant_rank": 2,
+      "retrieved_pages": [
+        "rmf:22",
+        "genai:11",
+        "genai:31",
+        "genai:7",
+        "rmf:35",
+        "genai:30"
+      ]
+    },
+    {
+      "question": "What is value chain and component integration risk in the Generative AI Profile?",
+      "passed": true,
+      "first_relevant_rank": 2,
+      "retrieved_pages": [
+        "genai:25",
+        "genai:16",
+        "genai:24",
+        "genai:32",
+        "genai:36",
+        "genai:5"
+      ]
+    }
+  ],
+  "live": [
+    {
+      "question": "What are the four core functions of the AI RMF?",
+      "expected_status": "answered",
+      "status_passed": true,
+      "text": "The four core functions of the AI RMF are GOVERN, MAP, MEASURE, and MANAGE. [1]",
+      "sources": [
+        {
+          "number": 1,
+          "document": "NIST AI RMF 1.0",
+          "pdf_page": 25,
+          "printed_page": "20",
+          "section": "5. AI RMF Core",
+          "url": "https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf#page=25"
+        }
+      ],
+      "query": "What are the four core functions of the AI RMF?",
+      "trace": [
+        "prepare",
+        "retrieve",
+        "assess",
+        "answer"
+      ],
+      "status": "answered"
+    },
+    {
+      "question": "Which one is cross-cutting?",
+      "expected_status": "answered",
+      "status_passed": true,
+      "text": "The GOVERN function is the cross‑cutting core function of the NIST AI Risk Management Framework. [1]",
+      "sources": [
+        {
+          "number": 1,
+          "document": "NIST AI RMF 1.0",
+          "pdf_page": 25,
+          "printed_page": "20",
+          "section": "5. AI RMF Core",
+          "url": "https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf#page=25"
+        }
+      ],
+      "query": "Which of the four core functions of the NIST AI Risk Management Framework is cross‑cutting?",
+      "trace": [
+        "prepare",
+        "retrieve",
+        "assess",
+        "answer"
+      ],
+      "status": "answered"
+    },
+    {
+      "question": "How does it relate to the other functions?",
+      "expected_status": "answered",
+      "status_passed": false,
+      "text": "I could not complete this request. The LLM is rate-limited or unavailable. Please try again later.",
+      "sources": [],
+      "query": "How does the GOVERN core function of the NIST AI Risk Management Framework relate to the other core functions (MAP, MEASURE, MANAGE)?",
+      "trace": [
+        "prepare",
+        "retrieve",
+        "assess",
+        "abstain"
+      ],
+      "status": "error"
+    }
+  ],
+  "hit_rate_at_k": 1.0,
+  "k": 6,
+  "note": "This is a small development set, not an unbiased benchmark. Live checks compare statuses only; read the answers and cited pages to judge correctness, relevance, follow-up resolution, and unsupported claims."
+}

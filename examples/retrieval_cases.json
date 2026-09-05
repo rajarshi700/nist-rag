@@ -1,0 +1,38 @@
+[
+  {
+    "question": "What are the four core functions of the NIST AI RMF?",
+    "document_id": "rmf",
+    "pdf_pages": [25],
+    "terms": ["govern", "map", "measure", "manage"]
+  },
+  {
+    "question": "Which NIST AI RMF function is cross-cutting?",
+    "document_id": "rmf",
+    "pdf_pages": [25, 27],
+    "terms": ["govern", "cross-cutting"]
+  },
+  {
+    "question": "What are the characteristics of trustworthy AI?",
+    "document_id": "rmf",
+    "pdf_pages": [17],
+    "terms": ["reliable", "safe", "transparent"]
+  },
+  {
+    "question": "What does the Generative AI Profile mean by confabulation?",
+    "document_id": "genai",
+    "pdf_pages": [10],
+    "terms": ["confabulation", "false"]
+  },
+  {
+    "question": "What data privacy risks does the Generative AI Profile identify?",
+    "document_id": "genai",
+    "pdf_pages": [11, 12],
+    "terms": ["data", "privacy"]
+  },
+  {
+    "question": "What is value chain and component integration risk in the Generative AI Profile?",
+    "document_id": "genai",
+    "pdf_pages": [9, 16],
+    "terms": ["value chain", "component"]
+  }
+]
