@@ -95,7 +95,10 @@ def build_graph(retriever, llm, checkpointer=None):
                     },
                     max_tokens=300,
                 )
-                reset.update(standalone_question=plan.query, query=plan.query)
+                if plan.depends_on_history:
+                    reset.update(standalone_question=plan.query, query=plan.query)
+                else:
+                    reset.update(standalone_question=question, query=question)
             except AppError as exc:
                 reset["error"] = str(exc)
         return reset
