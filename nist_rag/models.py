@@ -41,6 +41,7 @@ class StructuredResponse(BaseModel):
 
 class QueryPlan(StructuredResponse):
     query: str = Field(min_length=1, max_length=700)
+    depends_on_history: bool
 
 
 class Assessment(StructuredResponse):
