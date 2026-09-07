@@ -192,6 +192,23 @@ those answers against their cited pages to assess semantic accuracy. It does not
 automatically prove grounding. See [VERIFICATION.md](VERIFICATION.md) for what was run when
 this ZIP was prepared.
 
+### Verification results
+
+Results recorded on September 5, 2026:
+
+| Check | Result |
+| --- | --- |
+| Automated tests | 33 passed |
+| Ruff linting | Passed |
+| Retrieval evaluation | 6/6 passed at top-6 |
+| Conversational follow-ups | 2/2 passed |
+| Live Groq evaluation | 6/6 expected outcomes passed |
+| Failure handling | 2/2 questions safely abstained |
+
+The retrieval cases are a small development sanity check, not an
+independent benchmark. Detailed results are available in
+`examples/retrieval_report.json` and `live-evaluation.json`.
+
 ## More questions to try
 
 - What are the characteristics of trustworthy AI?
