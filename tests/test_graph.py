@@ -23,10 +23,10 @@ def test_three_turn_conversation_uses_history_and_fresh_retrieval(hit):
     llm = ScriptedLLM(
         assessment(),
         answer(),
-        {"query": "Which NIST AI RMF core function is cross-cutting?"},
+        {"query": "Which NIST AI RMF core function is cross-cutting?", "depends_on_history": True},
         assessment(),
         answer("Govern is cross-cutting."),
-        {"query": "How does the GOVERN function relate to the other NIST AI RMF functions?"},
+        {"query": "How does the GOVERN function relate to the other NIST AI RMF functions?", "depends_on_history": True},
         assessment(),
         answer("Govern informs the other three functions."),
     )

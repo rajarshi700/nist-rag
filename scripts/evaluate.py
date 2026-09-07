@@ -64,8 +64,8 @@ def evaluate(live=False):
                 for question, expected in questions:
                     result = session.ask(question)
                     accepted = {expected}
-                    if expected == "insufficient_context":
-                        accepted.add("out_of_scope")
+                    if expected in {"insufficient_context", "out_of_scope"}:
+                        accepted.update({"insufficient_context", "out_of_scope"})
                     report["live"].append(
                         {
                             "question": question,
@@ -80,8 +80,9 @@ def evaluate(live=False):
                 llm.close()
         report["note"] = (
             "This is a small development set, not an unbiased benchmark. "
-            "Live checks compare statuses only; read the answers and cited pages to judge "
-            "correctness, relevance, follow-up resolution, and unsupported claims."
+            "For unrelated or unsupported questions, either out_of_scope or "
+            "insufficient_context counts as a safe abstention. Read the answers "
+            "and cited pages to judge correctness and grounding."
         )
         return report
     finally:
