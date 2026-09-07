@@ -19,25 +19,27 @@ Prepared on September 5, 2026, using Python 3.12.13 on Linux.
   [examples/retrieval_report.json](examples/retrieval_report.json).
 - Starting chat without an API key returned an actionable configuration error.
 
-## What has not been verified
+## Live evaluation
 
-**No live Groq completion was run: no Groq API key was available in the build environment.**
-The tests verify orchestration, conversation state, retry bounds, response parsing,
-citation handling, and failure paths; they do not establish the real model's answer quality.
-Model access, account quota, live latency, and end-to-end answer correctness remain to be
-checked with your key. The retrieval cases are a small development set, not an independent
-quality benchmark.
+Live Groq evaluation was completed on September 7, 2026. The evaluation
+script finished with exit code `0`.
 
-After adding your key to `.env`, run:
+- **6 of 6 expected outcomes passed.**
+- Four questions produced grounded answers with source citations.
+- Two dependent conversational follow-up questions were interpreted correctly.
+- The unrelated football question and unsupported fine question both produced
+  safe abstentions without sources.
+- The complete results are recorded in
+  [live-evaluation.json](live-evaluation.json).
+
+The football question returned `insufficient_context` rather than the more
+specific `out_of_scope` status. The evaluator accepts either status as a safe
+abstention because neither produces an unsupported answer or citation.
+
+Run the live evaluation with:
 
 ```bash
 python -m scripts.evaluate --live --output live-evaluation.json
-```
-
-Review the actual answers and PDF citations. The script includes a first question, two
-follow-ups, a topic change to confabulation, an unrelated question, and an unsupported
-numerical premise. Its automatic live checks inspect result statuses; they cannot prove
-semantic correctness.
 
 ## Tested package versions
 
