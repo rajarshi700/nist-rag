@@ -8,7 +8,7 @@ from nist_rag.llm import GroqLLM
 from nist_rag.models import QueryPlan
 
 
-def completion(content='{"query":"NIST GOVERN function"}', finish="stop"):
+def completion(content='{"query":"NIST GOVERN function", "depends_on_history":true}', finish="stop"):
     return httpx.Response(
         200,
         json={
